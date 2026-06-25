@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manualidades CyC - Acceso</title>
+    
+    <!-- Importamos la tipografía Poppins (Gilker no está en Google Fonts, así que usamos 'Syne' como opción similar para el logo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Syne:wght@800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTILOS GENERALES (Naranja y Blanco) --- */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Fondo blanco puro */
+            font-family: 'Poppins', sans-serif; /* Tipografía secundaria */
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- CONTENEDOR DE LA PANTALLA --- */
+        .caja-acceso {
+            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            /* Un borde sutil naranja para que resalte en el fondo blanco */
+            border: 3px solid #ff6b00; 
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        /* --- LOGO (Estilo Gilker / Geométrico pesado) --- */
+        .logo-marca {
+            font-family: 'Syne', sans-serif; /* Alternativa pro a Gilker para la prueba */
+            font-size: 32px;
+            font-weight: 800;
+            color: #ff6b00; /* Naranja vibrante */
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        /* --- TEXTOS (Poppins) --- */
+        p {
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* --- CASILLERO DE TEXTO --- */
+        .input-codigo {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        /* Cuando la clienta hace clic para escribir, el borde se pone naranja */
+        .input-codigo:focus {
+            border-color: #ff6b00;
+        }
+
+        /* --- BOTÓN DE INGRESO --- */
+        .btn-entrar {
+            width: 100%;
+            background-color: #ff6b00; /* Botón naranja llamativo */
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        /* Efecto cuando pasan el mouse por arriba */
+        .btn-entrar:hover {
+            background-color: #e05e00; /* Un naranja un toque más oscuro */
+        }
+        
+        .btn-entrar:active {
+            transform: scale(0.98); /* Efecto de hundirse al hacer clic */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="caja-acceso">
+        <!-- Logo con la tipografía pesada -->
+        <h1 class="logo-marca">Manualidades CyC</h1>
+        
+        <!-- Instrucciones en Poppins -->
+        <p>¡Hola! Ingresá el código de acceso exclusivo que te llegó con tu compra para empezar a tejer.</p>
+        
+        <!-- Input e Input Botón -->
+        <input type="text" class="input-codigo" placeholder="Escribí tu código acá">
+        <button class="btn-entrar">Comenzar Tutorial</button>
+    </div>
+
+</body>
+</html>
