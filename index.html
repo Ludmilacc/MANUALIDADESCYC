@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manualidades CyC - Acceso</title>
+    <title>Manualidades CyC - Bienvenida</title>
     
-    <!-- Importamos la tipografía Poppins para los textos -->
+    <!-- Importamos la tipografía secundaria (Poppins) desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* 
-           💡 NOTA PARA LUDMILA:
-           Cuando tengas el archivo de tu tipografía (ej: "Gilker-Bold.otf"), 
-           lo subís a la misma carpeta de GitHub y descomentás estas líneas de abajo 
-           para que la web use tu tipografía real.
+           💡 TIP PARA MÁS ADELANTE:
+           Cuando subas el archivo de tu tipografía "Gilker" a tu repositorio,
+           descomentás estas líneas de abajo para que la web la tome de forma nativa.
         */
         /*
         @font-face {
@@ -29,8 +28,8 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff; /* Fondo blanco puro */
+            font-family: 'Poppins', sans-serif; /* Tipografía secundaria */
             color: #333333;
             display: flex;
             justify-content: center;
@@ -38,35 +37,35 @@
             min-height: 100vh;
         }
 
-        /* --- CONTENEDOR DE LA PANTALLA --- */
-        .caja-acceso {
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .bloque-inicio {
             text-align: center;
             background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 20px;
-            border: 3px solid #ff6b00; 
-            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
-            max-width: 440px; /* Lo agrandamos un toque para dar más aire */
+            padding: 45px 30px;
+            border-radius: 24px;
+            border: 3px solid #ff6b00; /* Borde Naranja CyC */
+            box-shadow: 0 12px 35px rgba(255, 107, 0, 0.12);
+            max-width: 420px;
             width: 90%;
             box-sizing: border-box;
         }
 
-        /* --- LOGO (Manualidades CyC) --- */
-        .logo-marca {
-            /* Mientras tanto usa una sans-serif del sistema bien gruesa, luego usará Gilker */
+        /* --- BRANDING / LOGO (Tipografía Gilker) --- */
+        .logo-principal {
+            /* Fallback a Arial Black por si Gilker no cargó todavía, para mantener el peso visual */
             font-family: 'Gilker', 'Arial Black', sans-serif; 
-            font-size: 24px; /* Achicado para que NUNCA se salga del cuadro */
+            font-size: 26px;
             font-weight: 900;
             color: #ff6b00;
-            margin: 0 0 8px 0;
+            margin: 0;
             text-transform: uppercase;
             letter-spacing: -0.5px;
-            line-height: 1.2;
+            line-height: 1.1;
         }
-        
-        .logo-sub {
+
+        .logo-secundario {
             font-family: 'Gilker', 'Arial Black', sans-serif;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 900;
             color: #ff6b00;
             margin: 0 0 20px 0;
@@ -75,69 +74,87 @@
             line-height: 1;
         }
 
-        /* --- TEXTOS (Poppins) --- */
-        p {
-            color: #666666;
+        /* --- TEXTOS INSTRUCTIVOS (Poppins) --- */
+        .instrucciones {
             font-size: 14px;
+            color: #666666;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             padding: 0 10px;
         }
 
-        /* --- CASILLERO DE TEXTO --- */
-        .input-codigo {
+        /* --- CASILLEROS DE ENTRADA (Inputs) --- */
+        .campo-texto {
             width: 100%;
             padding: 14px;
+            margin-bottom: 12px;
             border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
+            border-radius: 12px;
+            font-size: 15px;
             font-family: 'Poppins', sans-serif;
             box-sizing: border-box;
-            text-align: center;
             outline: none;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        .input-codigo:focus {
+        /* Efecto cuando hacen foco en los inputs */
+        .campo-texto:focus {
             border-color: #ff6b00;
+            box-shadow: 0 0 8px rgba(255, 107, 0, 0.15);
         }
 
-        /* --- BOTÓN DE INGRESO --- */
-        .btn-entrar {
+        /* Forzamos que el input del código se escriba siempre en mayúsculas de forma visual */
+        #inputCodigo {
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* --- BOTÓN PRINCIPAL (Naranja) --- */
+        .btn-crear {
             width: 100%;
             background-color: #ff6b00;
             color: #ffffff;
             border: none;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 16px;
+            border-radius: 12px;
             font-size: 16px;
             font-weight: 600;
             font-family: 'Poppins', sans-serif;
-            margin-top: 20px;
+            margin-top: 10px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.1s;
         }
 
-        .btn-entrar:hover {
-            background-color: #e05e00;
+        /* Efectos de interacción para el botón */
+        .btn-crear:hover {
+            background-color: #e05e00; /* Naranja un poco más oscuro */
         }
-        
-        .btn-entrar:active {
-            transform: scale(0.98);
+
+        .btn-crear:active {
+            transform: scale(0.98); /* Simula el hundimiento al clickear */
         }
     </style>
 </head>
 <body>
 
-    <div class="caja-acceso">
-        <!-- Dividí el título en dos líneas para que respire y tenga toda la fuerza visual -->
-        <div class="logo-marca">Manualidades</div>
-        <div class="logo-sub">CyC</div>
+    <!-- BLOQUE 1: INICIO / REGISTRO ACCESO -->
+    <div class="bloque-inicio">
         
-        <p>¡Hola! Ingresá el código de acceso exclusivo que te llegó con tu compra para empezar a tejer.</p>
+        <!-- Nombre de la marca dividido para dar balance al diseño -->
+        <h1 class="logo-principal">Manualidades</h1>
+        <div class="logo-secundario">CyC</div>
         
-        <input type="text" class="input-codigo" placeholder="Escribí tu código acá">
-        <button class="btn-entrar">Comenzar Tutorial</button>
+        <p class="instrucciones">Completá tus datos e ingresá el código de acceso de tu patrón para comenzar el taller.</p>
+        
+        <!-- Inputs requeridos para el acceso -->
+        <input type="email" class="campo-texto" placeholder="Tu correo electrónico" required>
+        <input type="text" id="inputCodigo" class="campo-texto" placeholder="Código de acceso">
+        
+        <!-- Botón de acción principal -->
+        <button class="btn-crear">Comenzar a Crear</button>
+        
     </div>
 
 </body>
